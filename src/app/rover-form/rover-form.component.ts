@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { MarsRoverApiPhotosService } from '../mars-rover-api-photos.service';
+import { MarsRoverApiPhotos } from '../mars-rover-api-photos.service';
 
 @Component({
   selector: 'app-rover-form',
   templateUrl: './rover-form.component.html',
   styleUrls: ['./rover-form.component.css'],
-  providers: [MarsRoverApiPhotosService]
+  providers: [MarsRoverApiPhotos]
 })
 
 export class RoverFormComponent {
-  photos: any[] = null;
-  constructor(private marsRoverPhotos: MarsRoverApiPhotosService) { }
+  photos: any[];
+  noPhotos: boolean = false;
+  constructor(private marsRoverPhotos: MarsRoverApiPhotos) { }
+
   getRoverImages(date: string, camera: string) {
+    this.photos = null;
     this.marsRoverPhotos.getByDateAndCamera(date, camera).subscribe(response => {
-      this.photos = response.json();
+      if (response.json().photos.length > 0) {
+        this.photos = response.json();
+      }
     });
   }
 }

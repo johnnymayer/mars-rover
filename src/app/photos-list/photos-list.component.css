@@ -1,0 +1,9 @@
+img {
+  padding: 1em;
+  width: 640px;
+  height: 480px;
+}
+
+.photo {
+  object-fit: cover;
+}

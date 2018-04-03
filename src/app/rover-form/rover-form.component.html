@@ -1,10 +1,11 @@
-<h1>Curiosity Images</h1>
+<h2>Curiosity Images</h2>
 
 <form>
   <div class="form-group">
     <label for="camera">Date</label>
     <input type=date #roverDate>
   </div>
+  <br>
   <div class="form-group">
     <label for="camera">Camera</label>
     <select #roverCamera>
@@ -15,5 +16,13 @@
       <option value="MAHLI">Mars Hand Lens Imager</option>
     </select>
   </div>
+  <br>
   <button (click)="getRoverImages(roverDate.value, roverCamera.value)">Get Photos</button>
 </form>
+<br>
+<div *ngIf="photos">
+  <app-photos-list [childPhotos]="photos"></app-photos-list>
+</div>
+<div *ngIf="photos===null">
+  <h3>There were no photos taken on {{roverDate.value}} by the {{roverCamera.value}} camera.</h3>
+</div>
