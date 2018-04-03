@@ -1,5 +1,16 @@
 img {
   padding: 1em;
-  width: 25%;
-  height: 25%;
+  width: 320px;
+  height:  240px;
+}
+
+li {
+  display: inline;
+  list-style: none;
+}
+
+img: hover {
+  width: 640px;
+  height: 480px;
+  position: absolute;
 }
