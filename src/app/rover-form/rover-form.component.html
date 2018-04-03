@@ -3,11 +3,13 @@
 <form>
   <div class="form-group">
     <label for="camera">Date</label>
+    <br>
     <input type=date #roverDate>
   </div>
   <br>
   <div class="form-group">
     <label for="camera">Camera</label>
+    <br>
     <select #roverCamera>
       <option value="FHAZ">Front Hazard Avoidance Camera</option>
       <option value="RHAZ">Rear Hazard Avoidance Camera</option>
@@ -17,7 +19,9 @@
     </select>
   </div>
   <br>
-  <button (click)="getRoverImages(roverDate.value, roverCamera.value)">Get Photos</button>
+  <div style="text-align: center">
+    <button class="button" (click)="getRoverImages(roverDate.value, roverCamera.value)">Get Photos</button>
+  </div>
 </form>
 <br>
 <div *ngIf="photos">

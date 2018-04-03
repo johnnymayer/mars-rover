@@ -1,7 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-html, body, input, label, button, option, select, .form-group {
-    font-size: 2vw;
+html, body, input, label, option, select, h1, h2, h3, .button, button, .form-group, div {
+    font-size: 1.5rem;;
     text-align: center;
     background-color: black;
     color: white;
+}
+
+button:hover {
+    filter: invert(100%);
+}
+
+.photo {
+    width: 100%;
 }
