@@ -1,18 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { HttpModule } from '@angular/http';
+import { routing } from './app.routing';
+import { RoverFormComponent } from './rover-form/rover-form.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoverFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpModule,
+    routing,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
